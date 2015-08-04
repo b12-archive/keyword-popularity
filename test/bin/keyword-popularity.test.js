@@ -64,13 +64,14 @@ tape(title('Does what it says'), (is) => {
   const keywords = [
     'cli',
     'tool',
+    '1',
     `very-very-unlikely-keyword-${Date.now()}`,
   ];
-  const tabLength = keywords[2].length + 2;
-  const veryUnlikelyKeyword = keywords[2];
+  const tabLength = keywords[keywords.length - 1].length + 2;
+  const veryUnlikelyKeyword = keywords[keywords.length - 1];
   const program = spawn(is, `'${keywordPopularity}' ${keywords.join(' ')}`);
 
-  const wordWithTab = (word) => `${word} {${tabLength - word.length}}`;
+  const wordWithTab = (word) => `${word} {${tabLength - String(word).length}}`;
 
   program.succeeds(
     'succeeds'
