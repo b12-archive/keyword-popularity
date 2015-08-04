@@ -103,6 +103,6 @@ tape(title('Does what it says'), (is) => {
     'prints out `0` for a very unlikely keyword'
   );
 
-  program.timeout(500);
+  program.timeout(5000);
   program.end();
 });
