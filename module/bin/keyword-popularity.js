@@ -28,9 +28,9 @@ if (!keywords.length) {
 
 const {Promise} = require('es6-promise');
 const npmKeyword = require('npm-keyword');
-const zip = require('trine/iterable/zip');
-const map = require('trine/iterable/map');
-const to = require('trine/iterable/to');
+const {zip} = require('trine/iterable/zip');
+const {map} = require('trine/iterable/map');
+const {to} = require('trine/iterable/to');
 const easyTable = require('easy-table');
 
 Promise.all(keywords.map(
