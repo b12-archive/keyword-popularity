@@ -1,9 +1,9 @@
 {
-  "name": "<!--name-->",
+  "name": "keyword-popularity",
   "version": "0.0.0-work-in-progress",
-  "description": "<!--description-->",
+  "description": "Get the number of npm packages with a certain keyword.",
   "bin": {
-    "<!--name-->": "bin/<!--name-->.js"
+    "keyword-popularity": "bin/keyword-popularity.js"
   },
   "dependencies": {},
   "scripts": {
@@ -39,6 +39,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "<!--repo-->"
+    "url": "git@github.com:studio-b12/keyword-popularity"
   }
 }
