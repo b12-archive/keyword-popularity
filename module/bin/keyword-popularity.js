@@ -62,7 +62,7 @@ Promise.all(keywords.map(
         return wordWithTab(this[0]) + this[1];
       })
       ::to(Array)
-    ).join('\n') + '\n';
+    ).join('\n') + '\n';
 
     stdout.write(popularityTable);
     exit(0);
