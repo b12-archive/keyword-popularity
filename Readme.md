@@ -88,7 +88,16 @@ Usage
 
 
 
-<div                                                  id="/license">&nbsp;</div>
+
+<div                                                 id="/credits">&nbsp;</div>
+
+Credits
+-------
+
+Based on **[npm-keyword](https://www.npmjs.com/package/npm-keyword)** by **[@sindresorhus](https://github.com/sindresorhus)**.
+
+
+
 
 <div                                                  id="/license">&nbsp;</div>
 
