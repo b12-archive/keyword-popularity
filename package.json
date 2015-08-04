@@ -1,6 +1,6 @@
 {
   "name": "keyword-popularity",
-  "version": "0.0.0-work-in-progress",
+  "version": "1.0.0",
   "description": "Get the number of npm packages with a certain keyword.",
   "bin": {
     "keyword-popularity": "bin/keyword-popularity.js"
