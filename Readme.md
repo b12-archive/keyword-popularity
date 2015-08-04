@@ -67,7 +67,26 @@ Usage
 -----
 
 <!-- @doxie.inject start -->
-*Work in progress…*
+<!-- Don’t remove or change the comment above – that can break automatic updates. -->
+  SYNOPSIS
+
+    Usage: keyword-popularity ...<keyword>
+   or: keyword-popularity (-h|--help)
+
+
+  OPTIONS
+
+    -h  --help   Print a short synopsis (-h) or this help text (--help)
+
+
+  EXAMPLES
+
+    $ keyword-popularity  cli  tool  cli-tool
+    KEYWORD    POPULARITY
+    cli        2422
+    tool       497
+    cli-tool   0
+<!-- Don’t remove or change the comment below – that can break automatic updates. More info at <http://npm.im/doxie.inject>. -->
 <!-- @doxie.inject end -->
 
 
