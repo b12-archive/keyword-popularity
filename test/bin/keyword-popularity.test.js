@@ -7,15 +7,15 @@ const plus = require('1-liners/plus');
 const spawn = require('tape-spawn');
 
 const title = curry(plus)('The CLI tool:  ');
-const … = resolve(__dirname, '../../module/bin/….js');
-const …Command = curry(execFile)(…);
+const keywordPopularity = resolve(__dirname, '../../module/bin/keyword-popularity.js');
+const $keywordPopularity = curry(execFile)(keywordPopularity);
 
 tape(title('Prints usage'), (is) => {
   is.plan(8);
 
-  …Command([], (error, _, stderr) => {
+  $keywordPopularity([], (error, _, stderr) => {
     is.equal(error && error.code, 1,
-      '`…` fails…'
+      '`keyword-popularity` fails…'
     );
 
     is.ok(
@@ -24,9 +24,9 @@ tape(title('Prints usage'), (is) => {
     );
   });
 
-  …Command(['--invalid', '--options'], (error, _, stderr) => {
+  $keywordPopularity(['--invalid', '--options'], (error, _, stderr) => {
     is.equal(error && error.code, 1,
-      '`… --invalid --options` fails…'
+      '`keyword-popularity --invalid --options` fails…'
     );
 
     is.ok(
@@ -35,9 +35,9 @@ tape(title('Prints usage'), (is) => {
     );
   });
 
-  …Command(['-h'], (error, stdout) => {
+  $keywordPopularity(['-h'], (error, stdout) => {
     is.equal(error, null,
-      '`… -h` succeeds…'
+      '`keyword-popularity -h` succeeds…'
     );
 
     is.ok(
@@ -46,9 +46,9 @@ tape(title('Prints usage'), (is) => {
     );
   });
 
-  …Command(['--help'], (error, stdout) => {
+  $keywordPopularity(['--help'], (error, stdout) => {
     is.equal(error, null,
-      '`… --help` succeeds…'
+      '`keyword-popularity --help` succeeds…'
     );
 
     is.ok(
@@ -60,8 +60,8 @@ tape(title('Prints usage'), (is) => {
 
 const cwd = resolve(__dirname, '../mock-cwd');
 
-tape(title('…'), (is) => {
-  const run = spawn(is, `"${…}" a.js`, {cwd});
+tape(title('Does what it says'), (is) => {
+  const run = spawn(is, `"${keywordPopularity}"`, {cwd});
 
   run.succeeds(
     'succeeds'
