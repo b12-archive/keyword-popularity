@@ -1,6 +1,7 @@
 const {bold} = require('chalk');
+const indent = require('indent-string');
 
 module.exports =
 `  ${bold('SYNOPSIS')}
 
-${require('./usage').replace(/^(?!$)/mg, '    ')}`;
+${indent(require('./usage'), '    ')}`;

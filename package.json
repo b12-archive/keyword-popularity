@@ -9,6 +9,7 @@
     "chalk": "^1.1.0",
     "easy-table": "^1.0.0",
     "es6-promise": "^2.3.0",
+    "indent-string": "^2.0.0",
     "minimist": "^1.1.2",
     "npm-keyword": "^1.2.0",
     "repeat-string": "^1.5.2",
