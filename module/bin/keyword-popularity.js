@@ -46,12 +46,12 @@ Promise.all(keywords.map(
   .then((results) => {
     const keywordTitle = 'KEYWORD';
     const maxKeywordLength = keywords.reduce(
-      (maxLength, keyword) => max(maxLength, keyword.length),
+      (maxLength, keyword) => max(maxLength, String(keyword).length),
       keywordTitle.length
     );
 
     const wordWithTab = (word) => word +
-      repeat(' ', maxKeywordLength - word.length + 2)
+      repeat(' ', maxKeywordLength - String(word).length + 2)
     ;
 
     const popularityTable = [
