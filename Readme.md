@@ -29,12 +29,12 @@ keyword-popularity
 
 <p align="center"><a
   title="Graphic by the great Justin Mezzell"
-  href="http://justinmezzell.tumblr.com/post/89957156723"
+  href="http://justinmezzell.tumblr.com/post/75051971263"
   >
   <br/>
   <br/>
   <img
-    src="Readme/….gif"
+    src="Readme/Stopwatch.gif"
     width="400"
     height="300"
   />
