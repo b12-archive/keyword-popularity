@@ -31,7 +31,9 @@ const npmKeyword = require('npm-keyword');
 const {zip} = require('trine/iterable/zip');
 const {map} = require('trine/iterable/map');
 const {to} = require('trine/iterable/to');
-const easyTable = require('easy-table');
+const {max} = Math;
+const repeat = require('repeat-string');
+const {bold} = require('chalk');
 
 Promise.all(keywords.map(
   (keyword) => new Promise(
@@ -42,18 +44,27 @@ Promise.all(keywords.map(
   )
 ))
   .then((results) => {
-    const popularityTable = easyTable([
-      {1: 'KEYWORD', 2: 'POPULARITY'},
-    ].concat(keywords
-      ::zip(results)
+    const keywordTitle = 'KEYWORD';
+    const maxKeywordLength = keywords.reduce(
+      (maxLength, keyword) => max(maxLength, keyword.length),
+      keywordTitle.length
+    );
+
+    const wordWithTab = (word) => word +
+      repeat(' ', maxKeywordLength - word.length + 2)
+    ;
+
+    const popularityTable = [
+      bold(wordWithTab(keywordTitle) + 'POPULARITY'),
+    ].concat([keywords, results]
+      ::zip()
       ::map(function() {
-        return {1: this[0], 2: this[1]};
+        return wordWithTab(this[0]) + this[1];
       })
       ::to(Array)
-    )).print();
+    ).join('\n') + '\n';
 
-    stdout.write(popularityTable + '\n');
-
+    stdout.write(popularityTable);
     exit(0);
   })
   .catch((error) => {
