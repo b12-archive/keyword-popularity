@@ -92,7 +92,7 @@ tape(title('Does what it says'), (is) => {
       keywords.map((keyword) => (
         wordWithTab(keyword) +
         '\\d+\\n'
-      )) +
+      )).join('') +
       '$'
     ),
     '…followed by a table of keywords and numbers in the specified order'
