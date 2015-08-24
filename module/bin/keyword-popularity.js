@@ -37,7 +37,7 @@ const {bold} = require('chalk');
 
 Promise.all(keywords.map(
   (keyword) => new Promise(
-    (resolve, reject) => npmKeyword(keyword, (error, packages) => {
+    (resolve, reject) => npmKeyword(String(keyword), (error, packages) => {
       if (error) reject(error);
       else resolve(packages.length);
     })
