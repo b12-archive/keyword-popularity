@@ -3,7 +3,8 @@
 const {stdout, stderr, exit, argv} = process;
 
 const flags = require('minimist')(argv.slice(2), {boolean: true});
-const keywords = flags._;
+const keywords = flags._
+  .map(String);
 
 // Print usage
 
@@ -37,7 +38,7 @@ const {bold} = require('chalk');
 
 Promise.all(keywords.map(
   (keyword) => new Promise(
-    (resolve, reject) => npmKeyword(String(keyword), (error, packages) => {
+    (resolve, reject) => npmKeyword(keyword, (error, packages) => {
       if (error) reject(error);
       else resolve(packages.length);
     })
@@ -46,12 +47,12 @@ Promise.all(keywords.map(
   .then((results) => {
     const keywordTitle = 'KEYWORD';
     const maxKeywordLength = keywords.reduce(
-      (maxLength, keyword) => max(maxLength, String(keyword).length),
+      (maxLength, keyword) => max(maxLength, keyword.length),
       keywordTitle.length
     );
 
     const wordWithTab = (word) => word +
-      repeat(' ', maxKeywordLength - String(word).length + 2)
+      repeat(' ', maxKeywordLength - word.length + 2)
     ;
 
     const popularityTable = [
