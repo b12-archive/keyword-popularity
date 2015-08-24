@@ -11,7 +11,7 @@
     "es6-promise": "^3.0.2",
     "indent-string": "^2.0.0",
     "minimist": "^1.1.2",
-    "npm-keyword": "^3.0.0",
+    "npm-keyword": "^3.0.1",
     "repeat-string": "^1.5.2",
     "trine": "^0.1.0"
   },
